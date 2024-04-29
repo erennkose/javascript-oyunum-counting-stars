@@ -8,6 +8,7 @@ Web Tabanlı Programlama dersi için yaptığım Counting Stars adlı oyunum, an
 * [Visual Studio Code](https://code.visualstudio.com/) - Kodları yazdığım IDE.
 * [itch.io](https://itch.io/) - Bazı assetleri aldığım web sitesi.
 * [Freepik](https://www.freepik.com/) - Bazı assetleri aldığım web sitesi.
+* [CraftPix](https://craftpix.net/freebies/free-fantasy-chibi-male-sprites-pixel-art/?num=3&count=1604&sq=2d%20game%20character&pos=2) - Ana karakterimin assetleri.
 ## Oyunun Oynanışı
 * T, S -> Oyunu başlatma
 * A -> Sola hareket
