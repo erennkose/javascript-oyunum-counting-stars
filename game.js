@@ -29,11 +29,9 @@ let finalPoint; /* saniye başına puan vermemin oyun başladığı anda yani 't
 let yildizSure; /* yıldızın yeniden oluşturulması amacıyla oluşturduğum değişken */
 
 let playerImage = new Image();
-playerImage.style.borderRadius = "50%";
 playerImage.src = "./characters/idleMc.png"; /* ana karakterimizin fotoğrafını ekledim */
 
 let enemyImage = new Image();
-playerImage.style.borderRadius = "50%";
 enemyImage.src =  "./characters/ufo.png"; /* düşmanın fotoğrafını ekledim. */
 
 let starImage = new Image();
@@ -416,16 +414,13 @@ function animate(){
     if (keys.d.pressed){ 
         player.velocity.x = 1.5;
         playerImage.src = "./characters/mcRight.png"; /* karakterim sağa giderken sağa bakması için fotoğrafı güncelledim */
-        playerImage.style.borderRadius = "50%";
     }
     else if (keys.a.pressed){
         player.velocity.x = -1.5;
         playerImage.src = "./characters/mcLeft.png"; /* karakterim sola giderken sola bakması için fotoğrafı güncelledim */
-        playerImage.style.borderRadius = "50%";
     }
     else if(keys.a.pressed == false && keys.d.pressed == false){
         playerImage.src = "./characters/idleMc.png"; /* karakter sağa ya da sola gitmiyorsa düz durması için fotoğrafı güncelledim */
-        playerImage.style.borderRadius = "50%";
     }
     enemy.position.x += enemy.velocity.x;
 
