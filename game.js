@@ -126,7 +126,7 @@ class Enemy{ /* düşmanımızı oluşturmak ve çizmek için sınıf */
             this.velocity.y = 0;
             this.onGround = true;
         }
-        if (this.position.x + this.width + this.velocity.x < canvas.width && this.position.x + this.velocity.x > 0){ /* map dışına çıkmasını engellemek için (sağdan) */
+        if (this.position.x + this.width + this.velocity.x < canvas.width && this.position.x + this.velocity.x > 0){ /* map dışına çıkmasını engellemek için */
             this.position.x += this.velocity.x;
         }
         else {
@@ -195,8 +195,8 @@ const keys = { /*tuşlar için default olarak basılmadı değeri atadım */
 const bground = new Pictures({position:{x:0, y:0}, imageSrc: "./images/gameBackground.png"}); /* arka planı oluşturdum */
 let health = new Pictures({position:{x:10/1.5, y:10/1.5}, imageSrc: "./images/h3.png"}); /*can barını oluşturdum */
 
-let finalBackground = new Pictures({position:{x:0, y:0}, imageSrc: "./images/finalBackground.png"});
-let deadMc = new Pictures({position:{x:550, y:280/1.5}, imageSrc: "./characters/dead.png"});
+let finalBackground = new Pictures({position:{x:0, y:0}, imageSrc: "./images/finalBackground.png"}); /* oyun sona erdiğinde gösterilecek arka plan */
+let deadMc = new Pictures({position:{x:550, y:280/1.5}, imageSrc: "./characters/dead.png"}); /* oyun sona erdiğinde karakterimin yerde yatan halini gösteriyorum */
 
 
 
@@ -205,6 +205,7 @@ function animate(){
     ctx.fillStyle = "black";
     ctx.fillRect (0, 0, canvas.width, canvas.height);
 
+    /* Nesnelerimi oluşturduğum bölüm */
     ctx.save();
     bground.update();
     ctx.restore();
@@ -258,6 +259,7 @@ function animate(){
         deadMc.update();
         ctx.fillStyle = "white";
         ctx.font = "20px Georgia";
+        /* görünürlüğü arttırmak adına bazı yazılara ufak gölgeler ekledim */
         ctx.shadowOffsetX = 2;
         ctx.shadowOffsetY = 2;
         ctx.shadowBlur = 5;
@@ -269,7 +271,7 @@ function animate(){
         ctx.shadowOffsetY = 0;
         ctx.shadowBlur = 0;
         health = new Pictures({position:{x:850/1.5, y:400/1.5}, imageSrc: "./images/h0.png"});
-        health.update();
+        health.update(); /* can bitince can barı */
         return 0;
     }
     
@@ -278,19 +280,19 @@ function animate(){
         player.position.y < star.position.y + star.height &&
         player.position.y + player.height - 5 > star.position.y){ /* yıldız toplama mekaniği */
         star.position.x = Math.floor(Math.random() * 1000)+100;
-        starCounter++;
-        point += 10; 
-        clearInterval(yildizSure);
+        starCounter++; /* her toplanan yıldızda yıldız sayacını arttırdım */
+        point += 10;  /* her yıldız toplama 10 puan kazandırıyor */
+        clearInterval(yildizSure); /* yıldız toplanınca yeni yıldız için 6 saniyelik süreyi yeniliyor */
         yildizSure = setInterval(starTimer, 6000); /* 6 saniyeyi her yıldız toplandığında sıfırlaması için */
     }
 
     if (player.position.x < enemy.position.x + enemy.width && 
         player.position.x + player.width > enemy.position.x &&
         player.position.y < enemy.position.y + enemy.height &&
-        player.position.y + player.height > enemy.position.y) { /* çarpışma algılama mekaniği */
+        player.position.y + player.height > enemy.position.y) { /* oyuncunun ve düşmanın x ve y pozisyonlarına göre çarpışma algılama mekaniği */
         functionEnder ++;
     }
-    else{
+    else{ /* temas bitince bu değişkeni canımız sıfırlanmaması için sıfırladım */
         functionEnder = 0;
     }
 
@@ -298,7 +300,6 @@ function animate(){
         player.hp -= 0.5;
     }
     
-
     if (keys.x.pressed){ /*x tuşuna basıldığı zaman oyuncunun burgeri varsa burger kullanarak can verilmesi mekaniği ekledim */
         if ( (burgerCounter > 0) && burgerController == true ){
             if (player.hp == 2.5){
@@ -338,7 +339,7 @@ function animate(){
             else{
                 enemy.velocity.x = -0.5;
             }
-            if (enemy.position.x + enemy.width + enemy.velocity.x < canvas.width && enemy.position.x > 0){ /* map dışına çıkmasını engellemek için (sağdan) */
+            if (enemy.position.x + enemy.width + enemy.velocity.x < canvas.width && enemy.position.x > 0){ /* map dışına çıkmasını engellemek için */
                 enemy.position.x += enemy.velocity.x;
             }
             else {
@@ -714,7 +715,7 @@ function animate(){
 canvas.style.backgroundColor = "#384848";
 ctx.fillStyle = "white";
 ctx.font = "20px Arial";
-ctx.fillText("OYUNA BAŞLAMAK İÇİN 'T' VEYA 'S' TUŞUNA BASIN", (canvas.width/3)-40 , (canvas.height/2)-5); // oyun başlamadan önce canvasta gözükecek olan ekran
+ctx.fillText("OYUNA BAŞLAMAK İÇİN 'T' VEYA 'S' TUŞUNA BASIN", (canvas.width/3)-40 , (canvas.height/2)-5); /* oyun başlamadan önce canvasta gözükecek olan ekran */
 
 window.addEventListener("keydown", (event) =>{ /* ana karakterimiz için basılan tuşların algılanması amaçlı event listener */
     let key = event.key;
@@ -762,11 +763,6 @@ window.addEventListener("keyup", (event) =>{ /* ana karakterimiz için basılan 
         keys.c.pressed = false;
     }
 })
-
-let bilgiButon = document.getElementById("bilgi");
-bilgiButon.addEventListener("click", function() {
-    this.blur(); // Butonun odaklanmasını kaldır
-});
 
 function bilgiVer(){
     
