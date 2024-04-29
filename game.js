@@ -767,7 +767,6 @@ window.addEventListener("keyup", (event) =>{ /* ana karakterimiz için basılan 
 let bilgiButon = document.getElementById("bilgi");
 bilgiButon.addEventListener("click", function() {
     this.blur(); // Butonun odaklanmasını kaldır
-    bilgiVer();
 });
 function bilgiVer(){
     
