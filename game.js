@@ -29,6 +29,11 @@ let finalPoint; /* saniye başına puan vermemin oyun başladığı anda yani 't
 let yildizSure; /* yıldızın yeniden oluşturulması amacıyla oluşturduğum değişken */
 
 let playerImage = new Image();
+playerImage.src = "./characters/idleMc.png";
+let playerLeftImage = new Image();
+playerLeftImage.src = "./characters/mcLeft.png";
+let playerRightImage = new Image();
+playerRightImage.src = "./characters/mcRight.png";
 
 let enemyImage = new Image();
 enemyImage.src =  "./characters/ufo.png"; /* düşmanın fotoğrafını ekledim. */
@@ -412,14 +417,14 @@ function animate(){
     player.velocity.x = 0;
     if (keys.d.pressed){ 
         player.velocity.x = 1.5;
-        playerImage.src = './characters/mcRight.png'; /* karakterim sağa giderken sağa bakması için fotoğrafı güncelledim */
+        player.picture = playerRightImage; /* karakterim sağa giderken sağa bakması için fotoğrafı güncelledim */
     }
     else if (keys.a.pressed){
         player.velocity.x = -1.5;
-        playerImage.src = './characters/mcLeft.png'; /* karakterim sola giderken sola bakması için fotoğrafı güncelledim */
+        player.picture = playerLeftImage; /* karakterim sola giderken sola bakması için fotoğrafı güncelledim */
     }
     else if(keys.a.pressed == false && keys.d.pressed == false){
-        playerImage.src = './characters/idleMc.png'; /* karakter sağa ya da sola gitmiyorsa düz durması için fotoğrafı güncelledim */
+        player.picture = playerImage; /* karakter sağa ya da sola gitmiyorsa düz durması için fotoğrafı güncelledim */
     }
     enemy.position.x += enemy.velocity.x;
 
