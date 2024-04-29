@@ -16,6 +16,15 @@ Web Tabanlı Programlama dersi için yaptığım Counting Stars adlı oyunum, an
 * X -> Burger kullanıp can doldurma
 * C -> Kum saati kullanıp düşmanı yavaşlatma
 ## Oyunumdan Görseller
-* ![Giriş Ekranı]()
+* ### Giriş Ekranı
+  ![](/readmeGoruntuleri/girisEkrani.png)
+* ### Bilgi Verme
+  ![](/readmeGoruntuleri/bilgiVer.png)
+* ### Başlangıç
+  ![](/readmeGoruntuleri/baslangic.png)
+* ### Zıplama
+  ![](/readmeGoruntuleri/zıplama.png)
+* ### Son Ekran
+  ![](/readmeGoruntuleri/sonEkran.png)
 ## Yazar
 * [Eren Köse](https://tr.linkedin.com/in/eren-k%C3%B6se-338936252?trk=people-guest_people_search-card) - Bursa Teknik Üniversitesi Bilgisayar Mühendisliği Öğrencisi
