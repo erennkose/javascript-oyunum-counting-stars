@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>Counting Stars</title>
+    <link rel="shortcut icon" type="image/png" href="./characters/icon.png"/>
+    <style>
+        ul{
+            color: white;
+            font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif ;
+        }
+        li{
+            color: white;
+            font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif ;
+        }
+        p{
+            color: white;
+            font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif ;
+        }
+        h1{
+            color: white;
+            font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif ;
+        }
+        .myGrid{
+            grid-template-columns: 80% 20%;
+            grid-template-rows: 80% 20%;
+            overflow: auto;
+        }
+        button{
+            background-color: #367e0a;
+            width: 150px;
+            height: 30px;
+
+        }
+    </style>
+</head>
+<body style="background-color: #384848;">
+    <div>
+        <div>
+            <h1 style="text-align: center;">Counting Stars</h1> 
+            <img style="text-align: left; cursor: pointer;" id="info" onclick="bilgiVer()" src="./images/info.png"><p>Oyun hakkında bilgi almak için <br> üstteki i butonuna tıklayın.</p>
+        </div>
+        </div>
+        <div id="bilgi"></div>
+    <div style=" margin-top: 1%; margin-left: 2%; text-align: center;"><canvas id="myCanvas"></canvas></div>
+</body>
+
+<script src="game.js"></script>
+</html>
