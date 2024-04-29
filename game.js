@@ -29,7 +29,6 @@ let finalPoint; /* saniye başına puan vermemin oyun başladığı anda yani 't
 let yildizSure; /* yıldızın yeniden oluşturulması amacıyla oluşturduğum değişken */
 
 let playerImage = new Image();
-playerImage.src = "./characters/idleMc.png"; /* ana karakterimizin fotoğrafını ekledim */
 
 let enemyImage = new Image();
 enemyImage.src =  "./characters/ufo.png"; /* düşmanın fotoğrafını ekledim. */
