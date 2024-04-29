@@ -764,6 +764,7 @@ window.addEventListener("keyup", (event) =>{ /* ana karakterimiz için basılan 
     }
 })
 
+let bilgiButon = document.getElementById("bilgi");
 function bilgiVer(){
     
     if((bilgiButon.innerHTML == "")){
