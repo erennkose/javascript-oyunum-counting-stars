@@ -1,6 +1,7 @@
 # Proje Oyunum Counting Stars
 ## Oyun Açıklaması
 Web Tabanlı Programlama dersi için yaptığım Counting Stars adlı oyunum, ana karakterimiz olan Ryan'ı canlandırdığımız, etrafta 6 saniyede bir oluşup yok olan yıldızları toplamaya çalışıp puanımızı arttırmaya çalıştığımız, bunları yaparken de düşmanımız olan UFO'dan kaçmaya çalıştığımız bir javascript oyunudur. Oyunda can (sol üstte bulunan kalp barları), burger (orta üstte bulunan burger logosu), kum saati (orta üstte burgerin altında bulunan kum saati logosu) ve sağ üstte bulunan puan, toplanan yıldız, düşmanın hızı göstergeçleri bulunmaktadır. Burger 0.5 seviye can yenilemeye, kum saati ise 5 saniyeliğine düşmanımız olan UFO'nun hızını 0.5 seviyesine düşürmeye yaramaktadır. 10, 30, 50, 70, 100 yıldız toplandığında düşmanımız UFO'nun hız seviyesi yükselmektedir. Yazmış olduğum bu dinamik ve hareketli oyunu umarım beğenirsiniz. Yıldız ve puan toplarken bol şanslar!
+> NOT: Bu oyunu 120 Hz - 144 Hz arası ekran yenileme hızına sahip bir sistemde oynamanız tavsiye edilir. 
 ## Oyun ve Oynanış Videosu Linki
 * [Oyun Linki](https://erennkose.github.io/javascript-oyunum-counting-stars/) - Oyunuma yandaki linke tıklayarak ulaşabilirsiniz.
 * [Oynanış Videosu Linki](https://youtu.be/FpoKqeEEzFY) - Oyunun oynanış videosuna yandaki linke tıklayarak ulaşabilirsiniz.
